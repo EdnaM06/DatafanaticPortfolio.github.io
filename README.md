@@ -1,1 +1,1 @@
-# DatafanaticPortfolio.github.io
+# DataAnalystPortfolio.github.io

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Edna Kobo's Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <style>
+    #portfolio-details {
+      margin-top: 100px; 
+      margin-bottom: 50px; /* Adjust as needed */
+    }
+
+    #upcoming-projects {
+      margin-top: 200px;
+      margin-bottom: 100px; /* Adjust as needed */
+    }
+
+    /* Recommendations Section */
+    #recommendations .section-title {
+      margin-bottom: 100px;
+    }
+
+    .recommendations-slider {
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+
+    .recommendation-card {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .recommendation-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.5);
+    }
+
+    .recommendation-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .recommendation-content h4 {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .recommendation-content p {
+      font-size: 16px;
+    }
+
+  </style>
+  
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
+  <li><a href="https://drive.google.com/file/d/1J8mLJvNSgDb3FPEXIs66NX-NoYA2xp68/view?usp=sharing"><i class="fas fa-file-alt"></i> CV</a></li>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Folio
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <!-- Include Swiper JS and CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      <!-- Uncomment below if you prefer to use an text logo -->
+      <!-- <h1 class="logo"><a href="index.html">Folio</a></h1> -->
+
+      <nav id="navbar" class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio-details">Projects Details</a></li>
+                <li class="nav-item"><a class="nav-link" href="#upcoming">Upcoming Projects</a></li>
+                <li><a class="nav-link scrollto" href="experience.html">Experience</a></li>
+                <li><a class="nav-link scrollto" href="Skillshowcase/Skillsets.html">Skill Showcase</a></li>
+            </ul>
+        </div>
+    </nav>    
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+ <!-- ======= Portfolio Details Section ======= -->
+ <section id="portfolio-details" class="portfolio-details">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h2>Projects details</h2>
+          <p>Check out some of my featured projects below:</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 shadow p-3 mb-5 bg-body rounded" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/ANALYSIS (2).jpg'); background-size: cover; min-height: 400px;">
+          <div class="card-header bg-secondary" style="height: 80px;">
+            <h5 class="text-light">BCX Opportunity Win vs Loss Insights</h5>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-light">Analysis</h5>
+            <p class="card-text text-light">Utilizing Salesforce data (Apr-Aug 2023) to inform strategic decisions, placing a strong emphasis on GTM segments. Insightful dashboard analyzing opportunity win-loss trends.</p>
+            <a href="https://github.com/EdnaM06/BCX-Opportunity-Win-Vs-Loss-Insights.git" class="btn btn-primary" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 shadow p-3 mb-5 bg-body rounded" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/steps.jpg'); background-size: cover; min-height: 400px;">
+          <div class="card-header bg-secondary" style="height: 80px;">
+            <h5 class="text-light">Movie Recommendation App</h5>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-light">App Development</h5>
+            <p class="card-text text-light">Unsupervised learning project creating a personalized movie recommendation system for an enhanced user experience without explicit ratings reliance.</p>
+            <a href="https://github.com/EdnaM06/Portfolio-Projects/blob/54cff93066bea951da4f4e049761a9e42749f030/Unsupervised_Project_Movie_Reccommendations_System.ipynb" class="btn btn-primary" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 shadow p-3 mb-5 bg-body rounded" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/SENTIMENTS.jpg'); background-size: cover; min-height: 400px;">
+          <div class="card-header bg-secondary" style="height: 80px;">
+            <h5 class="text-light">Climate Sentiments Analysis</h5>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-light">Web Development</h5>
+            <p class="card-text text-light">This analysis is based on Twitter data, providing valuable insights. Companies with eco-friendly values aim to assess public sentiment on climate change for market insights, enhancing their understanding of product reception and addressing environmental concerns.</p>
+            <a href="https://github.com/EdnaM06/Portfolio-Projects/blob/54cff93066bea951da4f4e049761a9e42749f030/Advanced_Classification_Sentiments_Analysis.ipynb" class="btn btn-primary" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 shadow p-3 mb-5 bg-body rounded" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/LIGHTS.jpg'); background-size: cover; min-height: 400px;">
+          <div class="card-header bg-secondary" style="height: 80px;">
+            <h5 class="text-light">Spanish Government Energy Resources</h5>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-light">Data Solutions</h5>
+            <p class="card-text text-light">The Spanish government explores expanding renewable energy infrastructure investments and seeks insights into trends and patterns in the country's renewable and fossil fuel energy generation.</p>
+            <a href="https://github.com/EdnaM06/Portfolio-Projects/blob/54cff93066bea951da4f4e049761a9e42749f030/Regression_Predict_Renewable_Energy_Resorce.ipynb" class="btn btn-primary" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 shadow p-3 mb-5 bg-body rounded" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/ESKOM ANALYSIS.jpg'); background-size: cover; min-height: 400px;">
+          <div class="card-header bg-secondary" style="height: 80px;">
+            <h5 class="text-light">Eskom-Visualisation Dashboard</h5>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-light">Analysis</h5>
+            <p class="card-text text-light">The project provides a concise and insightful Power BI dashboard for Eskom, offering key visualizations on energy metrics and trends. Tailored for informed decision-making, it optimizes resource utilization to enhance operational efficiency.</p>
+            <a href="https://github.com/EdnaM06/Portfolio-Projects/blob/54cff93066bea951da4f4e049761a9e42749f030/Eskom-Visualisation4DS_Dashboard.pbix" class="btn btn-primary" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 shadow p-3 mb-5 bg-body rounded" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/BHE.jpg'); background-size: cover; min-height: 400px;">
+          <div class="card-header bg-secondary" style="height: 80px;">
+            <h5 class="text-light">Bhejane Online Trading Store</h5>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-light">Database Management</h5>
+            <p class="card-text text-light">Focused on Bhejane Trading Store, this project revolves around optimizing the database-related inventory system. Specializing in COVID essential items, the goal is to elevate store efficiency and ensure seamless inventory management through SQL solutions.</p>
+            <a href="https://github.com/EdnaM06/Portfolio-Projects/blob/54cff93066bea951da4f4e049761a9e42749f030/SQL_Predict_Bhejane%20Online%20Trading%20Store.ipynb" class="btn btn-primary" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Upcoming Projects Section ======= -->
+<section id="upcoming" class="upcoming-projects">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h2>Upcoming Projects</h2>
+          <p>Here are some of the projects I'm currently working on</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="upcoming-projects-carousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card shadow p-3 mb-5 bg-body rounded">
+                <div class="card-header bg-secondary">
+                  <h5 class="text-light">Internet Usage</h5>
+                </div>
+                <div class="card">
+                  <img src="assets/img/project 1.png" class="card-img-top" alt="Project Image 1">
+                  <div class="card-body">
+                    <h5 class="card-title text-dark">Internet Usage</h5>
+                    <p class="card-text text-dark">
+                      The project analyzes the global growth of internet usage since the 1990s, highlighting the rapid expansion and uneven access across different regions (Extracted from Kaggle).
+                      <h6>How the Project benefits business today:</h6>
+                      <ul>
+                        <li><strong>Optimize Marketing Strategies:</strong> Tailor marketing efforts based on regional internet usage trends.</li>
+                        <li><strong>Identify Market Opportunities:</strong> Discover new areas for expansion by understanding internet growth.</li>
+                        <li><strong>Gain Customer Insights:</strong> Use data to refine product offerings and meet customer needs.</li>
+                      </ul>
+                    </p>
+                    <a href="#" class="btn btn-primary" target="_blank">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card shadow p-3 mb-5 bg-body rounded">
+                <div class="card-header bg-secondary">
+                  <h5 class="text-light">Google Data Analytics Capstone Project: Netflix</h5>
+                </div>
+                <div class="card">
+                  <img src="assets/img/PROJECT 2.png" class="card-img-top" alt="Project Image 1">
+                  <div class="card-body">
+                    <h5 class="card-title text-dark">Google Data Analytics Capstone Project: Netflix</h5>
+                    <p class="card-text text-dark">
+                      This project aims to identify the types of movies that customers prefer and analyze their correlation with movie success to develop a data-driven investment strategy for Netflix's content acquisition (Extracted from Kaggle).
+                      <h6>How the Project benefits business today:</h6>
+                      <ul>
+                        <li><strong>Data-Driven Content Strategy:</strong> Improve content acquisition decisions with actionable insights.</li>
+                        <li><strong>Optimize Investments:</strong> Focus resources on high-return content based on customer preferences.</li>
+                        <li><strong>Enhance Viewer Engagement:</strong> Deliver content that aligns with audience interests, boosting engagement.</li>
+                      </ul>
+                    </p>
+                    <a href="#" class="btn btn-primary" target="_blank">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card shadow p-3 mb-5 bg-body rounded">
+                <div class="card-header bg-secondary">
+                  <h5 class="text-light">Amazon Product Dataset: Sales & Customer Feedback</h5>
+                </div>
+                <div class="card">
+                  <img src="assets/img/Project3.png" class="card-img-top" alt="Project Image 1">
+                  <div class="card-body">
+                    <h5 class="card-title text-dark">Amazon Product Dataset: Sales & Customer Feedback</h5>
+                    <p class="card-text text-dark">
+                      This project integrates Amazon product details, customer feedback, and synthetic sales data to analyze product performance and customer sentiment (Extracted from Kaggle).
+                      <h6>How the Project benefits business today:</h6>
+                      <ul>
+                        <li><strong>Guide Inventory and Marketing:</strong> Make data-driven decisions on inventory and marketing based on product performance.</li>
+                        <li><strong>Enhance Customer Satisfaction:</strong> Address customer feedback to improve product offerings and services.</li>
+                        <li><strong>Optimize Sales Strategies:</strong> Use sales data to forecast trends and refine sales approaches.</li>
+                      </ul>
+                    </p>
+                    <a href="#" class="btn btn-primary" target="_blank">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Add more carousel items for other upcoming projects -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#upcoming-projects-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#upcoming-projects-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+</div>
+</div>
+</div> 
+<div id="footer" class="text-center" style="background-color: #333; color: white;">
+  <div class="container">
+    <div class="socials-media text-center">
+
+      <ul class="list-unstyled">
+        <li><a href="https://aiupgradehub.blogspot.com/"><i class="fab fa-blogger"></i></a></li>
+        <li><a href="https://github.com/EdnaM06"><i class="bi bi-github"></i></a></li>
+        <li><a href="https://drive.google.com/file/d/1NLAkxyvtlmAHWvBrT_wqVb2cKziktg1-/view?usp=sharing"><i class="fas fa-file-alt"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/edna-kobo"><i class="bi bi-linkedin"></i></a></li>
+      </ul>
+
+    </div>
+
+    <p>&copy; 2024 Edna's Portfolio. All rights reserved.</p>
+
+    <div class="credits" style="color: lightgray;">
+      <!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Folio
+      -->
+      Designed by <a href="https://bootstrapmade.com/" style="color: lightgray;">BootstrapMade</a>
+    </div>
+
+  </div>
+</div><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var swiper = new Swiper('.recommendations-slider', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    });
+  </script>
+  <script>
+  document.querySelectorAll('.nav-link.scrollto').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      if (this.hash !== '') {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.hash);
+
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+
+          // Optionally update the active link
+          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+          this.classList.add('active');
+        }
+      }
+    });
+  });
+</script>  
+</body>
+
+</html>
