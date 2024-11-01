@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Dashboards</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column; /* Changed to vertical layout */
-            min-height: 100vh; /* Ensure the body takes full height */
+            min-height: 100vh;
         }
 
         .sidebar {
@@ -34,192 +34,186 @@
             margin: 10px 0;
         }
 
-        .sidebar a:hover {
-            color: #3498db;
-        }
-
         .main-content {
-            margin-left: 250px; /* Sidebar width */
-            padding: 0; /* Reset padding for proper spacing */
+            margin-left: 250px;
+            padding: 0;
             background-color: #f4f4f4;
             width: calc(100% - 250px);
-            flex-grow: 1; /* Allows main-content to grow */
-            box-sizing: border-box; /* Include padding in width */
+            flex-grow: 1;
             display: flex;
-            flex-direction: column; /* Stack items vertically */
-            position: relative; /* Set position relative for absolute footer */
+            flex-direction: column;
         }
 
+        /* Cover Section */
         .cover-page {
             height: 100vh;
-            position: relative; /* Needed for positioning child elements */
-            overflow: hidden; /* Hide overflow */
-            display: flex; /* Enables flexbox layout */
-            flex-direction: column; /* Stack items vertically */
-            align-items: center; /* Center items horizontally */
-            justify-content: center; /* Center items vertically */
-            text-align: center; /* Center text */
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         .cover-page video {
-            position: absolute; /* Position video absolutely within cover-page */
+            position: absolute;
             top: 50%;
             left: 50%;
             min-width: 100%;
             min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 1; /* Ensure video stays behind content */
-            transform: translate(-50%, -50%); /* Center the video */
+            transform: translate(-50%, -50%);
+            pointer-events: none;
         }
 
-        .cover-page h1,
-        .cover-page p {
-            position: relative; /* Ensure text stays on top of the video */
-            z-index: 2; /* Bring text above video */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .cover-page h1, .cover-page p, .cover-page .view-dashboard-button {
+            position: relative;
+            z-index: 3;
             color: white;
         }
 
-        .cover-page h1 {
-            font-size: 50px;
-            margin-bottom: 20px;
+        /* Card Carousel */
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            padding: 40px 0;
+            justify-content: center;
+            position: relative;
+            background-color: #ffffff;
         }
 
-        .cover-page p {
-            font-size: 24px;
-            margin-bottom: 40px;
+        .card {
+            min-width: 300px;
+            max-width: 300px;
+            margin: 0 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            padding: 10px;
+            color: #2c3e50;
         }
 
         .view-dashboard-button {
             background-color: #3498db;
             color: white;
-            padding: 15px 30px;
+            padding: 10px 20px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-            border: none; /* Removed since it's a link, not a button */
-            cursor: pointer;
             display: inline-block;
+            margin-bottom: 15px;
         }
 
-        .view-dashboard-button:hover {
-            background-color: #2980b9;
-        }
-
-        .dashboard-list {
-            text-align: center;
-            padding: 50px;
-            background-color: #ffffff;
-        }
-
-        .dashboard-list h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-
-        .placeholder {
-            font-size: 24px;
-            color: #7f8c8d;
-            padding: 20px;
-            background-color: #ecf0f1;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            position: relative; /* Ensures the link is clickable */
-        }
-
-        .footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 20px; /* This adds padding inside the footer */
+        /* Navigation Buttons */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
             width: 100%;
-            position: relative; /* Changed to relative */
-            bottom: 0; /* Stick to the bottom */
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
         }
     </style>
-    <style>
-      .cover-page {
-          position: relative;
-          overflow: hidden; /* Prevents overflow from video */
-      }
-  
-      .cover-page video {
-          width: 100%;
-          height: auto; /* Ensures the video maintains its aspect ratio */
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 1; /* Places the video behind the overlay and text */
-      }
-  
-      .overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-          z-index: 2; /* Places the overlay above the video */
-      }
-  
-      .cover-page h1,
-      .cover-page p,
-      .cover-page .view-dashboard-button {
-          position: relative;
-          z-index: 3; /* Places text above the overlay */
-          color: white; /* Sets text color to white for better contrast */
-          text-align: center; /* Centers the text */
-          margin: 20px 0; /* Adds margin for spacing */
-      }
-  </style>
 </head>
 <body>
 
     <aside class="sidebar">
-        <h2>Dashboard Navigation</h2>
+        <h2>Dashboards</h2>
         <a href="#internet-usage">Internet Usage</a>
         <a href="#netflix-analytics">Netflix Data Analytics</a>
         <a href="#amazon-sales">Amazon Sales & Feedback</a>
     </aside>
 
     <div class="main-content">
-      <section class="cover-page">
-        <video autoplay muted loop>
-            <source src="assets/img/12364359_1920_1080_25fps.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="overlay"></div> <!-- Added overlay -->
-        <h1>Current Dashboards</h1>
-        <p>Explore my latest data projects and analytics dashboards below.</p>
-        <a href="#dashboard-list" class="view-dashboard-button">View Dashboards</a>
-    </section>
+        <section class="cover-page">
+            <video autoplay muted loop>
+                <source src="assets/img/12364359_1920_1080_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+            <h1>Current Dashboards</h1>
+            <p>Explore my latest data projects and analytics dashboards below.</p>
+        </section>
 
-        <section id="dashboard-list" class="dashboard-list">
-            <h2>Current Dashboards Projects</h2>
-            <div id="internet-usage" class="placeholder">
+        <section class="carousel">
+            <div class="carousel-nav">
+                <button onclick="slideCarousel(-1)">&#10094;</button>
+                <button onclick="slideCarousel(1)">&#10095;</button>
+            </div>
+
+            <div class="card" id="internet-usage">
+                <img src="assets/img/pexels-liza-summer-6348124.jpg" alt="Internet Usage Dashboard">
                 <h3>Internet Usage Dashboard</h3>
-                <p>Details about the Internet Usage project...</p>
                 <a href="internet-usage.html" class="view-dashboard-button">View Project</a>
             </div>
-            <div id="netflix-analytics" class="placeholder">
+            <div class="card" id="netflix-analytics">
+                <img src="assets/img/pexels-efe-ersoy-393937500-19748590.jpg" alt="Netflix Data Analytics">
                 <h3>Netflix Data Analytics</h3>
-                <p>Details about the Netflix Data Analytics project...</p>
                 <a href="netflix-analytics.html" class="view-dashboard-button">View Project</a>
             </div>
-            <div id="amazon-sales" class="placeholder">
+            <div class="card" id="amazon-sales">
+                <img src="assets/img/pexels-mikhail-nilov-6592684.jpg" alt="Amazon Sales & Feedback">
                 <h3>Amazon Sales & Feedback</h3>
-                <p>Details about the Amazon Sales & Feedback project...</p>
                 <a href="amazon-sales.html" class="view-dashboard-button">View Project</a>
             </div>
         </section>
 
-        <footer class="footer">
-            <p>&copy; 2024 Edna's Portfolio | Real-Time Dashboards Portfolio</p>
-        </footer>
     </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function slideCarousel(direction) {
+            const carousel = document.querySelector('.carousel');
+            const cards = carousel.querySelectorAll('.card');
+            const totalSlides = cards.length;
+
+            currentSlide += direction;
+
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+
+            // Adjust the carousel transform to show the current card in the center
+            const offset = -currentSlide * 330; // 300px card width + 30px margin
+            cards.forEach(card => card.style.transform = `translateX(${offset}px)`);
+        }
+    </script>
 
 </body>
 </html>
